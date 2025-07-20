@@ -48,7 +48,7 @@ const PackageTrackingSection = () => {
             </p>
             <p className="text-gray-700 mb-8 text-sm leading-relaxed">
               You can find your Tracking ID in your client dashboard or receipt.
-              It’s often labeled as a reference number or barcode.
+              It&apos;s often labeled as a reference number or barcode.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">

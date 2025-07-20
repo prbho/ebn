@@ -30,11 +30,11 @@ export default function Page() {
 
             <TabsContent value="tab-1">
               <p className="mb-4">
-                Life’s hectic schedule often makes it hard to complete personal
-                tasks which is why ErrandBoy Nigeria created a reliable and
-                professional Errand Running Service. Whether it’s picking up dry
-                cleaning, delivering packages, or grocery shopping, our expert
-                team is here to assist.
+                Life&apos;s hectic schedule often makes it hard to complete
+                personal tasks which is why ErrandBoy Nigeria created a reliable
+                and professional Errand Running Service. Whether it&apos;s
+                picking up dry cleaning, delivering packages, or grocery
+                shopping, our expert team is here to assist.
               </p>
               <p className="mb-4">
                 Fast, efficient and reliable—ErrandBoy Nigeria offers the most

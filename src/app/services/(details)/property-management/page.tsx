@@ -20,7 +20,7 @@ export default function Page() {
             <p>
               ErrandBoy Nigeria has acquired vast management experience over the
               years. We make searching for that dream house or land simple and
-              stress-free, whether you're leasing, letting, or buying.
+              stress-free, whether you&apos;re leasing, letting, or buying.
             </p>
             <p>
               Our services range from acquisition and inspections to ongoing
@@ -55,7 +55,7 @@ export default function Page() {
               Let’s handle your property needs
             </h2>
             <p className="mb-6 text-white/90 max-w-xl mx-auto">
-              From acquisition to maintenance and staffing, we’ve got your
+              From acquisition to maintenance and staffing, we&apos;ve got your
               property covered. Contact us to discuss your unique needs.
             </p>
             <button className="bg-white text-red-500 hover:bg-gray-100 transition px-6 py-3 rounded-lg font-semibold">

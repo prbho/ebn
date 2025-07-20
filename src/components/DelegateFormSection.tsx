@@ -68,7 +68,7 @@ const DelegateFormSplitSection = () => {
                   Friendly Support Team
                 </h4>
                 <p className="text-gray-500 text-sm">
-                  Talk to humans, not robots. We're here for you.
+                  Talk to humans, not robots. We&apos;re here for you.
                 </p>
               </div>
             </div>
@@ -87,7 +87,7 @@ const DelegateFormSplitSection = () => {
             Delegate an Errand
           </h3>
           <p className="text-gray-500 text-sm mb-4">
-            Fill in your details. We’ll respond within 24 hours.
+            Fill in your details. We&apos;ll respond within 24 hours.
           </p>
 
           <div className="grid md:grid-cols-2 gap-4">
