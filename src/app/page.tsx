@@ -18,6 +18,7 @@ import HeroSection from "@/components/HeroSection";
 import DelegateFormSection from "@/components/DelegateFormSection";
 import PackageTrackingSection from "@/components/PackageTrackingSection";
 import FAQSection from "@/components/FAQSection";
+import ReviewsSection from "@/components/reviewsSection";
 
 const ErrandBoyWebsite = () => {
   return (
@@ -39,6 +40,9 @@ const ErrandBoyWebsite = () => {
 
       {/* Package Tracking */}
       <PackageTrackingSection />
+
+      {/* Reviews Section */}
+      <ReviewsSection />
 
       {/* FAQ Section */}
       <FAQSection />
