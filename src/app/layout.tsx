@@ -1,4 +1,3 @@
-export const runtime = "edge";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, PT_Serif } from "next/font/google";
 import "./globals.css";

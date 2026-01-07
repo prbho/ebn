@@ -1,5 +1,0 @@
-name = "ebn"
-compatibility_date = "2026-01-09"
-
-# Required for Cloudflare Pages + Next.js
-pages_build_output_dir = ".vercel/output/static"
