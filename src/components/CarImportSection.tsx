@@ -85,7 +85,7 @@ const CarImportSection = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
         >
-          <Link href="/usa-vehicle-import" passHref>
+          <Link href="/usa" passHref>
             <motion.button
               className="bg-yellow-400 text-gray-800 px-10 py-4 rounded-lg font-semibold text-lg hover:bg-yellow-500 transition-colors shadow-lg inline-block"
               whileTap={{ scale: 0.95 }}
