@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { PackageSearch } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const PackageTrackingSection = () => {
   const [trackingNumber, setTrackingNumber] = useState("");
@@ -23,10 +24,13 @@ const PackageTrackingSection = () => {
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            viewport={{ once: true }}>
-            <img
+            viewport={{ once: true }}
+          >
+            <Image
               src="/images/parcel.jpg"
               alt="Package tracking"
+              width={600}
+              height={400}
               className="rounded-lg shadow-xl w-full"
             />
           </motion.div>
@@ -36,7 +40,8 @@ const PackageTrackingSection = () => {
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            viewport={{ once: true }}>
+            viewport={{ once: true }}
+          >
             <div className="bg-white p-3 rounded-full inline-block mb-4 shadow-md">
               <PackageSearch className="w-8 h-8 text-yellow-600" />
             </div>
@@ -61,7 +66,8 @@ const PackageTrackingSection = () => {
               />
               <button
                 onClick={handleTrack}
-                className="bg-red-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-600 transition-all">
+                className="bg-red-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-600 transition-all"
+              >
                 TRACK NOW
               </button>
             </div>

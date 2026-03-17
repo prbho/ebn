@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Lightbulb, Workflow, TrendingUp, ShieldCheck } from "lucide-react";
 
 const WhySection = () => {
@@ -48,7 +48,8 @@ const WhySection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mb-14 text-center ">
+          className="mb-14 text-center "
+        >
           <h3 className="text-gray-500 text-sm uppercase mb-2">
             Why Choose Us
           </h3>
@@ -64,7 +65,8 @@ const WhySection = () => {
             initial="hidden"
             whileInView="visible"
             transition={{ staggerChildren: 0.1 }}
-            viewport={{ once: true }}>
+            viewport={{ once: true }}
+          >
             {tabs.map((tab, index) => (
               <motion.button
                 key={index}
@@ -77,7 +79,8 @@ const WhySection = () => {
                   activeTab === index
                     ? "bg-gradient-to-r from-red-500 to-red-600 text-white shadow-md"
                     : "hover:bg-gray-700 text-gray-300"
-                }`}>
+                }`}
+              >
                 <div className="flex items-center gap-3">
                   {tab.icon}
                   <span className="text-sm font-medium">{tab.title}</span>
@@ -92,7 +95,8 @@ const WhySection = () => {
             key={activeTab} // ensures remounting and re-animate
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}>
+            transition={{ duration: 0.5 }}
+          >
             <span className="text-yellow-400 text-sm font-semibold mb-4 block">
               OUR DIFFERENTIATOR
             </span>
@@ -107,7 +111,8 @@ const WhySection = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.4 }}
-              className="mt-8 p-4 bg-red-600 bg-opacity-30 rounded-lg backdrop-blur-sm border border-red-400">
+              className="mt-8 p-4 bg-red-600 bg-opacity-30 rounded-lg backdrop-blur-sm border border-red-400"
+            >
               <div className="flex items-center">
                 <div className="w-10 h-10 bg-yellow-400 text-black font-bold rounded-full flex items-center justify-center mr-4">
                   {activeTab + 1}

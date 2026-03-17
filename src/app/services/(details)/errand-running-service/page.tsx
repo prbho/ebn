@@ -3,6 +3,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { errands, errandSteps } from "@/lib";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Page() {
   return (
@@ -13,17 +14,20 @@ export default function Page() {
           className="space-y-10 max-w-5xl mx-auto"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}>
+          transition={{ duration: 0.6 }}
+        >
           <Tabs defaultValue="tab-1" className="w-full">
             <TabsList className="flex gap-2 flex-wrap justify-center mb-6 bg-transparent">
               <TabsTrigger
                 value="tab-1"
-                className="data-[state=active]:bg-red-500 data-[state=active]:text-white rounded-full px-4 py-2 border border-gray-200">
+                className="data-[state=active]:bg-red-500 data-[state=active]:text-white rounded-full px-4 py-2 border border-gray-200"
+              >
                 Errand Running Service
               </TabsTrigger>
               <TabsTrigger
                 value="tab-2"
-                className="data-[state=active]:bg-red-500 data-[state=active]:text-white rounded-full px-4 py-2 border border-gray-200">
+                className="data-[state=active]:bg-red-500 data-[state=active]:text-white rounded-full px-4 py-2 border border-gray-200"
+              >
                 Errand Service for Businesses
               </TabsTrigger>
             </TabsList>
@@ -53,7 +57,8 @@ export default function Page() {
                       initial={{ opacity: 0, y: 30 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
-                      transition={{ delay: index * 0.1 }}>
+                      transition={{ delay: index * 0.1 }}
+                    >
                       <div className="text-red-500">
                         <item.icon className="w-6 h-6" />
                       </div>
@@ -92,7 +97,8 @@ export default function Page() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.2 }}>
+                  transition={{ delay: index * 0.2 }}
+                >
                   <div className="w-16 h-16 mx-auto mb-4 bg-red-100 text-red-500 rounded-full flex items-center justify-center">
                     <step.icon className="w-8 h-8" />
                   </div>
@@ -112,9 +118,13 @@ export default function Page() {
               Let ErrandBoy Nigeria handle the stress. Our professional errand
               team is just a request away.
             </p>
-            <button className="bg-white text-red-500 hover:bg-gray-100 transition px-6 py-3 rounded-lg font-semibold">
+            <Link
+              href="/delegate"
+              className="bg-white text-red-500 hover:bg-gray-100 transition px-6 py-3 rounded-lg font-semibold"
+              aria-label="Get started with Errand Running Service"
+            >
               Get Started
-            </button>
+            </Link>
           </section>
         </motion.div>
       </section>

@@ -1,18 +1,10 @@
 "use client";
 
 import React from "react";
-import {
-  ClipboardList,
-  Home,
-  Plane,
-  ShoppingCart,
-  PartyPopper,
-  Search,
-  UserCheck,
-  FileText,
-} from "lucide-react";
+import { ClipboardList, UserCheck, FileText } from "lucide-react";
 import { motion } from "framer-motion";
 import { PAservices } from "@/lib";
+import Link from "next/link";
 
 export default function PersonalAssistancePage() {
   return (
@@ -36,7 +28,8 @@ export default function PersonalAssistancePage() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}>
+                transition={{ delay: index * 0.1 }}
+              >
                 <div className="w-16 h-16 mx-auto mb-4 bg-red-100 text-red-600 rounded-full flex items-center justify-center">
                   <item.icon className="w-8 h-8" />
                 </div>
@@ -82,7 +75,8 @@ export default function PersonalAssistancePage() {
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.15 }}>
+                transition={{ delay: i * 0.15 }}
+              >
                 <div className="w-16 h-16 mx-auto mb-4 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center">
                   <step.icon className="w-8 h-8" />
                 </div>
@@ -98,16 +92,20 @@ export default function PersonalAssistancePage() {
       <div className="space-y-10 max-w-5xl mx-auto pb-20">
         <section className="bg-red-500 text-white mt-24 rounded-xl py-12 px-6 text-center">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-3xl md:text-3xl font-bold mb-4">
               Transparent Pricing, No Hidden Fees
             </h2>
             <p className="text-lg mb-6">
               We offer flexible pricing structures with no contract, membership,
               or joining fees.
             </p>
-            <button className="bg-white text-red-600 px-8 py-3 rounded-lg font-semibold hover:bg-red-100 transition-colors shadow">
-              Call Now for a Quote
-            </button>
+            <Link
+              href="/delegate"
+              className="bg-white text-red-600 px-8 py-3 rounded-lg font-semibold hover:bg-red-100 transition-colors shadow"
+              aria-label="Get a Quote"
+            >
+              Get a Quote
+            </Link>
           </div>
         </section>
       </div>

@@ -1,12 +1,4 @@
-import React, { useState } from "react";
-import {
-  ChevronDown,
-  Clock3,
-  CalendarDays,
-  CreditCard,
-  HelpCircle,
-  PlusIcon,
-} from "lucide-react";
+import { PlusIcon } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem } from "./ui/accordion";
 import { Accordion as AccordionPrimitive } from "radix-ui";
 
@@ -38,15 +30,6 @@ const items = [
 ];
 
 const FAQSection = () => {
-  const [openIndexes, setOpenIndexes] = useState<number[]>([]);
-  const [searchTerm, setSearchTerm] = useState("");
-
-  const toggleFaq = (index: number) => {
-    setOpenIndexes((prev) =>
-      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
-    );
-  };
-
   return (
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4 max-w-3xl">
@@ -60,7 +43,8 @@ const FAQSection = () => {
             type="single"
             collapsible
             className="w-full"
-            defaultValue="3">
+            defaultValue="3"
+          >
             {items.map((item) => (
               <AccordionItem value={item.id} key={item.id} className="py-2">
                 <AccordionPrimitive.Header className="flex">

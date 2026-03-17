@@ -1,16 +1,5 @@
 "use client";
 
-import React, { useState } from "react";
-import {
-  Package,
-  Truck,
-  Clock,
-  Shield,
-  MapPin,
-  Phone,
-  ChevronDown,
-  Star,
-} from "lucide-react";
 import ServicesSection from "@/components/ServicesSection";
 import WhySection from "@/components/WhySection";
 import FeaturesSection from "@/components/FeaturesSection";
@@ -19,6 +8,7 @@ import DelegateFormSection from "@/components/DelegateFormSection";
 import PackageTrackingSection from "@/components/PackageTrackingSection";
 import FAQSection from "@/components/FAQSection";
 import ReviewsSection from "@/components/reviewsSection";
+import CarImportSection from "@/components/CarImportSection";
 
 const ErrandBoyWebsite = () => {
   return (
@@ -34,6 +24,8 @@ const ErrandBoyWebsite = () => {
 
       {/* Features Section */}
       <FeaturesSection />
+      {/* Car Import Section - Add this */}
+      <CarImportSection />
 
       {/* Contact Form */}
       <DelegateFormSection />

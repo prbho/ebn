@@ -216,14 +216,37 @@ export const serviceData = [
 ];
 
 export const services = [
-  { name: "Errand Running", href: "/services/errand-running-service" },
-  { name: "Automobile Services", href: "/services/automobile-services" },
+  {
+    name: "Errand Running",
+    href: "/services/errand-running-service",
+    description: "Quick and reliable daily errands",
+  },
+  {
+    name: "Automobile Services",
+    href: "/services/automobile-services",
+    description: "Comprehensive automobile services",
+  },
   {
     name: "Custom Travel Solutions",
     href: "/services/custom-travel-solutions",
+    description: "Tailored travel experiences",
   },
-  { name: "Personal Assistant", href: "/services/personal-assistance" },
-  { name: "Property Management", href: "/services/property-management" },
+  {
+    name: "Vehicle Import (USA)",
+    href: "/services/vehicle-import",
+    description: "Import vehicles from USA to Nigeria",
+    highlight: true,
+  },
+  {
+    name: "Personal Assistant",
+    href: "/services/personal-assistance",
+    description: "Discreet, reliable, and tailored support",
+  },
+  {
+    name: "Property Management",
+    href: "/services/property-management",
+    description: "Expert care and oversight for your assets",
+  },
 ];
 
 export const support = [

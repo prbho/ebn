@@ -2,6 +2,7 @@
 
 import { serviceData } from "@/lib";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function ServicesPage() {
@@ -10,7 +11,7 @@ export default function ServicesPage() {
       {/* Hero */}
       <section className="relative h-[20vh] flex items-center justify-center">
         <div className="relative z-10 text-center px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Services</h1>
+          <h1 className="text-3xl md:text-5xl font-bold mb-4">Our Services</h1>
           <p className="text-lg">
             Professional solutions, personalized for you.
           </p>
@@ -27,13 +28,16 @@ export default function ServicesPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+              className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+            >
               <Link href={`/${service.slug}`}>
                 <div className="relative h-56 overflow-hidden">
-                  <img
+                  <Image
                     src={service.image}
                     alt={service.title}
                     className="object-cover w-full h-full hover:scale-105 transition-transform duration-500"
+                    width={512}
+                    height={288}
                   />
                 </div>
                 <div className="p-6 bg-white">

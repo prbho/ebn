@@ -1,7 +1,8 @@
 "use client";
 
-import { propertyServices, typicalRequests } from "@/lib";
+import { propertyServices } from "@/lib";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Page() {
   return (
@@ -12,7 +13,8 @@ export default function Page() {
           className="space-y-10 mx-auto max-w-5xl"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}>
+          transition={{ duration: 0.6 }}
+        >
           <div className="space-y-6">
             <h2 className="text-2xl font-bold text-gray-800">
               Comprehensive Property Management
@@ -39,7 +41,8 @@ export default function Page() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}>
+                  transition={{ delay: index * 0.1 }}
+                >
                   <div className="w-12 h-12 rounded-full bg-red-100 text-red-500 flex items-center justify-center shrink-0">
                     <item.icon className="w-6 h-6" />
                   </div>
@@ -52,15 +55,19 @@ export default function Page() {
           {/* CTA */}
           <section className="bg-red-500 text-white mt-24 rounded-xl py-12 px-6 text-center">
             <h2 className="text-3xl font-bold mb-4">
-              Let’s handle your property needs
+              Let&apos;s handle your property needs
             </h2>
             <p className="mb-6 text-white/90 max-w-xl mx-auto">
               From acquisition to maintenance and staffing, we&apos;ve got your
               property covered. Contact us to discuss your unique needs.
             </p>
-            <button className="bg-white text-red-500 hover:bg-gray-100 transition px-6 py-3 rounded-lg font-semibold">
+            <Link
+              href="/delegate"
+              className="bg-white text-red-500 hover:bg-gray-100 transition px-6 py-3 rounded-lg font-semibold"
+              aria-label="Request Property Help"
+            >
               Request Property Help
-            </button>
+            </Link>
           </section>
         </motion.div>
       </section>

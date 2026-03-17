@@ -1,5 +1,4 @@
 import React from "react";
-import { Package, Truck, MapPin, Shield, Clock } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { servicesCard } from "@/lib";
@@ -17,7 +16,8 @@ export default function ServicesSection() {
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
-                viewport={{ once: true }}>
+                viewport={{ once: true }}
+              >
                 {/* Flip Card Container */}
                 <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
                   {/* Front Side */}
@@ -47,7 +47,8 @@ export default function ServicesSection() {
                     <Link href={service.href}>
                       <motion.button
                         className="mt-6 bg-yellow-400 hover:bg-yellow-300 text-blue-900 px-4 py-2 rounded-lg font-semibold transition-colors inline-block text-center"
-                        whileTap={{ scale: 0.95 }}>
+                        whileTap={{ scale: 0.95 }}
+                      >
                         Learn More
                       </motion.button>
                     </Link>

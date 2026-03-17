@@ -2,6 +2,7 @@
 
 import { typicalRequests } from "@/lib";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Page() {
   return (
@@ -12,7 +13,8 @@ export default function Page() {
           className="space-y-10 max-w-5xl mx-auto"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}>
+          transition={{ duration: 0.6 }}
+        >
           <div className="space-y-6">
             <h2 className="text-2xl font-bold text-gray-800">
               Custom Travel Solutions
@@ -56,7 +58,8 @@ export default function Page() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}>
+                  transition={{ delay: index * 0.1 }}
+                >
                   <div className="w-12 h-12 rounded-full bg-red-100 text-red-500 flex items-center justify-center shrink-0">
                     <item.icon className="w-6 h-6" />
                   </div>
@@ -75,9 +78,13 @@ export default function Page() {
               From travel documents to dream destinations, our expert travel
               team handles everything so you can travel stress-free.
             </p>
-            <button className="bg-white text-red-500 hover:bg-gray-100 transition px-6 py-3 rounded-lg font-semibold">
+            <Link
+              href="/delegate"
+              className="bg-white text-red-500 hover:bg-gray-100 transition px-6 py-3 rounded-lg font-semibold"
+              aria-label="Book Travel Consultation"
+            >
               Book Travel Consultation
-            </button>
+            </Link>
           </section>
         </motion.div>
       </section>

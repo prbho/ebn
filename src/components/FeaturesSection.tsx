@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 interface FeatureItem {
   icon: string;
@@ -31,7 +32,7 @@ const FeaturesSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-white overflow-hidden">
       <div className="container mx-auto px-4 relative z-10 item-center">
         {/* Section Header */}
         <motion.div
@@ -39,7 +40,8 @@ const FeaturesSection: React.FC = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          viewport={{ once: true }}>
+          viewport={{ once: true }}
+        >
           <h2 className="text-3xl font-bold text-gray-800 mb-4 font-pt-serif">
             Our Key Features
           </h2>
@@ -59,9 +61,10 @@ const FeaturesSection: React.FC = () => {
               whileHover={{
                 scale: 1.02,
                 boxShadow: "0 12px 24px rgba(0,0,0,0.1)",
-              }}>
+              }}
+            >
               <div className="bg-red-100 rounded-full p-3 w-16 h-16 mx-auto mb-4 flex items-center justify-center shadow-inner">
-                <img
+                <Image
                   src={feature.icon}
                   alt={feature.title}
                   className="w-10 h-10 object-contain"
@@ -80,7 +83,8 @@ const FeaturesSection: React.FC = () => {
                 <motion.button
                   className="text-red-500 font-semibold hover:text-red-600 transition-colors flex items-center justify-center mx-auto"
                   whileTap={{ scale: 0.95 }}
-                  aria-label={`Learn more about ${feature.title}`}>
+                  aria-label={`Learn more about ${feature.title}`}
+                >
                   LEARN MORE <span className="ml-1">→</span>
                 </motion.button>
               </Link>

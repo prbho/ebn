@@ -26,8 +26,9 @@ const ReviewsSection: React.FC = () => {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          viewport={{ once: true }}>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4 font-pt-serif">
+          viewport={{ once: true }}
+        >
+          <h2 className="text-3xl md:text-3xl font-bold text-gray-800 mb-4 font-pt-serif">
             What Our Customers Say
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
@@ -48,7 +49,8 @@ const ReviewsSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.05, duration: 0.6 }}
               viewport={{ once: true }}
-              onClick={() => setSelectedReview(review)}>
+              onClick={() => setSelectedReview(review)}
+            >
               <div
                 className={`bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 h-full ${
                   index === 0
@@ -62,7 +64,8 @@ const ReviewsSection: React.FC = () => {
                 }
                 
                 
-                `}>
+                `}
+              >
                 {/* Header */}
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center space-x-3">
@@ -105,13 +108,15 @@ const ReviewsSection: React.FC = () => {
                 <h3
                   className={`font-semibold text-gray-800 mb-2 ${
                     index === 0 ? "text-lg" : "text-sm"
-                  }`}>
+                  }`}
+                >
                   {review.title}
                 </h3>
                 <p
                   className={`text-gray-600 leading-relaxed ${
                     index === 0 ? "text-sm" : "text-xs line-clamp-3"
-                  }`}>
+                  }`}
+                >
                   {review.excerpt}
                 </p>
 
@@ -133,12 +138,14 @@ const ReviewsSection: React.FC = () => {
             className="fixed inset-0 bg-black/80 bg-opacity-50 z-50 flex items-center justify-center p-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            onClick={() => setSelectedReview(null)}>
+            onClick={() => setSelectedReview(null)}
+          >
             <motion.div
               className="bg-white rounded-xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto"
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              onClick={(e) => e.stopPropagation()}>
+              onClick={(e) => e.stopPropagation()}
+            >
               <div className="flex items-start justify-between mb-6">
                 <div className="flex items-center space-x-4">
                   <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center text-white font-semibold text-lg">
@@ -164,7 +171,8 @@ const ReviewsSection: React.FC = () => {
                 </div>
                 <button
                   onClick={() => setSelectedReview(null)}
-                  className="text-gray-400 hover:text-gray-600 text-2xl">
+                  className="text-gray-400 hover:text-gray-600 text-2xl"
+                >
                   ×
                 </button>
               </div>
@@ -181,7 +189,8 @@ const ReviewsSection: React.FC = () => {
                   href={selectedReview.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-2 inline-flex items-center text-sm text-blue-500 hover:underline">
+                  className="mt-2 inline-flex items-center text-sm text-blue-500 hover:underline"
+                >
                   Read on Google
                 </a>
               )}
@@ -190,7 +199,8 @@ const ReviewsSection: React.FC = () => {
                 <motion.button
                   className="bg-yellow-400 hover:bg-yellow-500 text-gray-800 px-6 py-2 rounded-lg font-semibold transition-colors"
                   whileTap={{ scale: 0.95 }}
-                  onClick={() => setSelectedReview(null)}>
+                  onClick={() => setSelectedReview(null)}
+                >
                   Close
                 </motion.button>
               </div>

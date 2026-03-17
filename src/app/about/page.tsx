@@ -3,6 +3,7 @@
 import React from "react";
 import { Shield, Target, Heart, Star } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const founders = [
   {
@@ -49,9 +50,10 @@ const ErrandBoyAboutPage = () => {
           className="container mx-auto px-4 "
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}>
+          transition={{ duration: 0.8 }}
+        >
           <div className="max-w-5xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+            <h1 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
               Who is Errandboy Nigeria?
             </h1>
             <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
@@ -89,10 +91,11 @@ const ErrandBoyAboutPage = () => {
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-5xl mx-auto">
             <motion.h2
-              className="text-3xl md:text-4xl font-bold text-gray-800 mb-6"
+              className="text-3xl md:text-3xl font-bold text-gray-800 mb-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}>
+              transition={{ duration: 0.5 }}
+            >
               Meet the Founders
             </motion.h2>
             <p className="text-gray-600 max-w-2xl mx-auto mb-12">
@@ -105,12 +108,15 @@ const ErrandBoyAboutPage = () => {
                   className="group text-center"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: idx * 0.2 }}>
+                  transition={{ delay: idx * 0.2 }}
+                >
                   <div className="relative mb-6">
                     <div className="w-64 h-64 mx-auto rounded-full overflow-hidden shadow-xl group-hover:shadow-2xl transition duration-300">
-                      <img
+                      <Image
                         src={f.image}
                         alt={f.name}
+                        width={256}
+                        height={256}
                         className="w-full h-full object-cover"
                       />
                     </div>
@@ -136,10 +142,11 @@ const ErrandBoyAboutPage = () => {
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-5xl mx-auto">
             <motion.h2
-              className="text-3xl md:text-4xl font-bold text-gray-800 mb-6"
+              className="text-3xl md:text-3xl font-bold text-gray-800 mb-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}>
+              transition={{ duration: 0.5 }}
+            >
               Our Culture
             </motion.h2>
             <p className="text-gray-600 max-w-2xl mx-auto mb-12">
@@ -152,9 +159,11 @@ const ErrandBoyAboutPage = () => {
                   className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition text-center"
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.2 }}>
+                  transition={{ delay: i * 0.2 }}
+                >
                   <div
-                    className={`bg-${color}-100 group-hover:bg-${color}-200 transition p-4 w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center`}>
+                    className={`bg-${color}-100 group-hover:bg-${color}-200 transition p-4 w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center`}
+                  >
                     <Icon className={`w-10 h-10 text-${color}-600`} />
                   </div>
                   <h3 className="text-xl font-bold text-gray-800 mb-3">
@@ -173,7 +182,8 @@ const ErrandBoyAboutPage = () => {
         className="bg-red-500 text-white py-16"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}>
+        transition={{ duration: 0.6 }}
+      >
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between text-center md:text-left">
           <h2 className="text-2xl md:text-3xl font-semibold max-w-xl mb-6 md:mb-0">
             We can be your great business partner and help you grow strongly.

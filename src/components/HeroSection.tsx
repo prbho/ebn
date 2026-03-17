@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const HeroSection: React.FC = () => {
   return (
@@ -10,8 +11,11 @@ const HeroSection: React.FC = () => {
         className="absolute inset-0"
         initial={{ scale: 1.1, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 1.5, ease: "easeOut" }}>
-        <img
+        transition={{ duration: 1.5, ease: "easeOut" }}
+      >
+        <Image
+          width={1920}
+          height={1080}
           src="/images/bqig4chkumdrijqxub8y.jpg"
           alt="Moving company background"
           className="w-full h-full object-cover"
@@ -26,12 +30,14 @@ const HeroSection: React.FC = () => {
             className="text-black/80"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}>
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
             <motion.h1
-              className="text-4xl md:text-5xl font-bold mb-6 leading-tight font-pt-serif"
+              className="text-3xl md:text-5xl font-bold mb-6 leading-tight font-pt-serif"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}>
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
               Let&apos;s help take the stress off your shoulders.
             </motion.h1>
 
@@ -39,7 +45,8 @@ const HeroSection: React.FC = () => {
               className="text-gray-600 mb-8 text-lg"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}>
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
               Our professional team of movers and packers are at your beck and
               call.
             </motion.p>
@@ -50,7 +57,8 @@ const HeroSection: React.FC = () => {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: 0.6 }}
-                whileTap={{ scale: 0.95 }}>
+                whileTap={{ scale: 0.95 }}
+              >
                 LEARN MORE
               </motion.button>
             </Link>

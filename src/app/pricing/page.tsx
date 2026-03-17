@@ -87,14 +87,16 @@ export default function SimplePricing() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="bg-gradient-to-t from-red-900 to-black bg-clip-text text-4xl font-bold text-transparent sm:text-5xl">
+            className="bg-gradient-to-t from-red-900 to-black bg-clip-text text-3xl font-bold text-transparent sm:text-5xl"
+          >
             Seamless and Affordable Prices
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="py-20 px-4 mx-auto max-w-5xl pt-2 text-lg text-muted-foreground">
+            className="py-20 px-4 mx-auto max-w-5xl pt-2 text-lg text-muted-foreground"
+          >
             Our pricing is competitive and transparent and we never have hidden
             charges. We provide a quotation for each errand and ensure you
             understand and agree to errand costs before we facilitate your
@@ -106,24 +108,29 @@ export default function SimplePricing() {
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.4, delay: 0.2 }}>
+          transition={{ duration: 0.4, delay: 0.2 }}
+        >
           <Tabs
             defaultValue={frequency}
             onValueChange={setFrequency}
-            className="inline-block rounded-full bg-muted/30 p-1 shadow-sm">
+            className="inline-block rounded-full bg-muted/30 p-1 shadow-sm"
+          >
             <TabsList className="bg-transparent">
               <TabsTrigger
                 value="hourly"
-                className="rounded-full transition-all duration-300 data-[state=active]:bg-background data-[state=active]:shadow-sm">
+                className="rounded-full transition-all duration-300 data-[state=active]:bg-background data-[state=active]:shadow-sm"
+              >
                 Hourly
               </TabsTrigger>
               <TabsTrigger
                 value="daily"
-                className="rounded-full transition-all duration-300 data-[state=active]:bg-background data-[state=active]:shadow-sm">
+                className="rounded-full transition-all duration-300 data-[state=active]:bg-background data-[state=active]:shadow-sm"
+              >
                 Daily
                 <Badge
                   variant="secondary"
-                  className="ml-2 bg-red=500/10 text-primary hover:bg-primary/15">
+                  className="ml-2 bg-red=500/10 text-primary hover:bg-primary/15"
+                >
                   20% off
                 </Badge>
               </TabsTrigger>
@@ -182,7 +189,8 @@ export default function SimplePricing() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 + index * 0.1 }}
                 whileHover={{ y: -5 }}
-                className="flex">
+                className="flex"
+              >
                 <Card className={cardClasses}>
                   {isPopular && (
                     <div className="absolute -top-3 left-0 right-0 mx-auto w-fit">
@@ -246,7 +254,8 @@ export default function SimplePricing() {
                           duration: 0.3,
                           delay: 0.5 + index * 0.05,
                         }}
-                        className="flex items-center gap-2 text-sm">
+                        className="flex items-center gap-2 text-sm"
+                      >
                         <div className={featureIconClasses}>
                           <Check className="h-3.5 w-3.5" />
                         </div>
@@ -258,7 +267,8 @@ export default function SimplePricing() {
                   <CardFooter>
                     <Button
                       variant={isPopular ? "default" : "outline"}
-                      className={buttonClasses}>
+                      className={buttonClasses}
+                    >
                       {plan.cta}
                       <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                     </Button>

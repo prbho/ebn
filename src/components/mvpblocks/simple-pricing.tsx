@@ -92,7 +92,8 @@ export default function SimplePricing() {
         <div className="flex flex-col items-center space-y-2">
           <Badge
             variant="outline"
-            className="mb-4 rounded-full border-primary/20 bg-primary/5 px-4 py-1 text-sm font-medium">
+            className="mb-4 rounded-full border-primary/20 bg-primary/5 px-4 py-1 text-sm font-medium"
+          >
             <Sparkles className="mr-1 h-3.5 w-3.5 animate-pulse text-primary" />
             Pricing Plans
           </Badge>
@@ -100,14 +101,16 @@ export default function SimplePricing() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="bg-gradient-to-b from-foreground to-foreground/30 bg-clip-text text-4xl font-bold text-transparent sm:text-5xl">
+            className="bg-gradient-to-b from-foreground to-foreground/30 bg-clip-text text-3xl font-bold text-transparent sm:text-5xl"
+          >
             Pick the perfect plan for your needs
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="max-w-md pt-2 text-lg text-muted-foreground">
+            className="max-w-md pt-2 text-lg text-muted-foreground"
+          >
             Simple, transparent pricing that scales with your business. No
             hidden fees, no surprises.
           </motion.p>
@@ -116,24 +119,29 @@ export default function SimplePricing() {
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.4, delay: 0.2 }}>
+          transition={{ duration: 0.4, delay: 0.2 }}
+        >
           <Tabs
             defaultValue={frequency}
             onValueChange={setFrequency}
-            className="inline-block rounded-full bg-muted/30 p-1 shadow-sm">
+            className="inline-block rounded-full bg-muted/30 p-1 shadow-sm"
+          >
             <TabsList className="bg-transparent">
               <TabsTrigger
                 value="monthly"
-                className="rounded-full transition-all duration-300 data-[state=active]:bg-background data-[state=active]:shadow-sm">
+                className="rounded-full transition-all duration-300 data-[state=active]:bg-background data-[state=active]:shadow-sm"
+              >
                 Monthly
               </TabsTrigger>
               <TabsTrigger
                 value="yearly"
-                className="rounded-full transition-all duration-300 data-[state=active]:bg-background data-[state=active]:shadow-sm">
+                className="rounded-full transition-all duration-300 data-[state=active]:bg-background data-[state=active]:shadow-sm"
+              >
                 Yearly
                 <Badge
                   variant="secondary"
-                  className="ml-2 bg-primary/10 text-primary hover:bg-primary/15">
+                  className="ml-2 bg-primary/10 text-primary hover:bg-primary/15"
+                >
                   20% off
                 </Badge>
               </TabsTrigger>
@@ -149,7 +157,8 @@ export default function SimplePricing() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 + index * 0.1 }}
               whileHover={{ y: -5 }}
-              className="flex">
+              className="flex"
+            >
               <Card
                 className={cn(
                   "relative h-full w-full bg-secondary/20 text-left transition-all duration-300 hover:shadow-lg",
@@ -158,7 +167,8 @@ export default function SimplePricing() {
                     : "hover:border-primary/30",
                   plan.popular &&
                     "bg-gradient-to-b from-primary/[0.03] to-transparent"
-                )}>
+                )}
+              >
                 {plan.popular && (
                   <div className="absolute -top-3 left-0 right-0 mx-auto w-fit">
                     <Badge className="rounded-full bg-primary px-4 py-1 text-primary-foreground shadow-sm">
@@ -175,14 +185,16 @@ export default function SimplePricing() {
                         plan.popular
                           ? "bg-primary/10 text-primary"
                           : "bg-secondary text-foreground"
-                      )}>
+                      )}
+                    >
                       <plan.icon className="h-4 w-4" />
                     </div>
                     <CardTitle
                       className={cn(
                         "text-xl font-bold",
                         plan.popular && "text-primary"
-                      )}>
+                      )}
+                    >
                       {plan.name}
                     </CardTitle>
                   </div>
@@ -218,7 +230,8 @@ export default function SimplePricing() {
                           className={cn(
                             "text-2xl font-bold",
                             plan.popular ? "text-primary" : "text-foreground"
-                          )}>
+                          )}
+                        >
                           {plan.price[frequency as keyof typeof plan.price]}
                         </span>
                       )}
@@ -232,14 +245,16 @@ export default function SimplePricing() {
                       initial={{ opacity: 0, x: -5 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.3, delay: 0.5 + index * 0.05 }}
-                      className="flex items-center gap-2 text-sm">
+                      className="flex items-center gap-2 text-sm"
+                    >
                       <div
                         className={cn(
                           "flex h-5 w-5 items-center justify-center rounded-full",
                           plan.popular
                             ? "bg-red-500/10 text-primary"
                             : "bg-secondary text-secondary-foreground"
-                        )}>
+                        )}
+                      >
                         <Check className="h-3.5 w-3.5" />
                       </div>
                       <span
@@ -247,7 +262,8 @@ export default function SimplePricing() {
                           plan.popular
                             ? "text-foreground"
                             : "text-muted-foreground"
-                        }>
+                        }
+                      >
                         {feature}
                       </span>
                     </motion.div>
@@ -261,7 +277,8 @@ export default function SimplePricing() {
                       plan.popular
                         ? "bg-primary hover:bg-primary/90 hover:shadow-md hover:shadow-primary/20"
                         : "hover:border-primary/30 hover:bg-primary/5 hover:text-primary"
-                    )}>
+                    )}
+                  >
                     {plan.cta}
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </Button>
