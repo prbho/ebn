@@ -1,130 +1,61 @@
-<?xml version="1.0" encoding="UTF-8"?>
+import { NextResponse } from 'next/server';
+
+export async function GET() {
+  const baseUrl = 'https://errandboy.com';
+  
+  // List all your routes
+  const routes = [
+    '',
+    '/about',
+    '/contact',
+    '/delegate',
+    '/faq',
+    '/pricing',
+    '/privacy',
+    '/terms',
+    '/services',
+    '/services/automobile-services',
+    '/services/custom-travel-solutions',
+    '/services/errand-running-service',
+    '/services/personal-assistance',
+    '/services/property-management',
+    '/services/vehicle-import',
+    '/services/vehicle-import/form',
+    '/services/vehicle-import/learn-more',
+    '/usa',
+    '/sitemap',
+  ];
+
+  // Generate sitemap XML
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Main Pages -->
+  ${routes.map(route => `
   <url>
-    <loc>https://errandboy.com/</loc>
-    <lastmod>2026-03-17</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
+    <loc>${baseUrl}${route}</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <changefreq>${getChangeFreq(route)}</changefreq>
+    <priority>${getPriority(route)}</priority>
   </url>
-  <url>
-    <loc>https://errandboy.com/about</loc>
-    <lastmod>2026-03-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://errandboy.com/contact</loc>
-    <lastmod>2026-03-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://errandboy.com/delegate</loc>
-    <lastmod>2026-03-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://errandboy.com/faq</loc>
-    <lastmod>2026-03-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://errandboy.com/pricing</loc>
-    <lastmod>2026-03-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  `).join('')}
+</urlset>`;
 
-  <!-- Legal Pages -->
-  <url>
-    <loc>https://errandboy.com/privacy</loc>
-    <lastmod>2026-03-17</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://errandboy.com/terms</loc>
-    <lastmod>2026-03-17</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  return new NextResponse(sitemap, {
+    headers: {
+      'Content-Type': 'application/xml',
+      'Cache-Control': 'public, max-age=3600, s-maxage=3600',
+    },
+  });
+}
 
-  <!-- Services Main -->
-  <url>
-    <loc>https://errandboy.com/services</loc>
-    <lastmod>2026-03-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
+function getChangeFreq(route: string): string {
+  if (route === '' || route === '/services' || route === '/usa') return 'daily';
+  if (route.includes('/delegate')) return 'weekly';
+  return 'monthly';
+}
 
-  <!-- Individual Services -->
-  <url>
-    <loc>https://errandboy.com/services/automobile-services</loc>
-    <lastmod>2026-03-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://errandboy.com/services/custom-travel-solutions</loc>
-    <lastmod>2026-03-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://errandboy.com/services/errand-running-service</loc>
-    <lastmod>2026-03-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://errandboy.com/services/personal-assistance</loc>
-    <lastmod>2026-03-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://errandboy.com/services/property-management</loc>
-    <lastmod>2026-03-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Vehicle Import Pages -->
-  <url>
-    <loc>https://errandboy.com/services/vehicle-import</loc>
-    <lastmod>2026-03-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://errandboy.com/services/vehicle-import/form</loc>
-    <lastmod>2026-03-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://errandboy.com/services/vehicle-import/learn-more</loc>
-    <lastmod>2026-03-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- USA Section -->
-  <url>
-    <loc>https://errandboy.com/usa</loc>
-    <lastmod>2026-03-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Sitemap -->
-  <url>
-    <loc>https://errandboy.com/sitemap</loc>
-    <lastmod>2026-03-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-</urlset>
+function getPriority(route: string): string {
+  if (route === '') return '1.0';
+  if (route === '/services' || route === '/usa' || route === '/delegate') return '0.9';
+  if (route.includes('/vehicle-import')) return '0.8';
+  return '0.7';
+}
