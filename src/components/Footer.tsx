@@ -133,6 +133,11 @@ const Footer = () => {
                   Get in Touch
                 </Link>
               </li>
+              <li>
+                <Link href="/sitemap" className="hover:text-white transition">
+                  Sitemap
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
