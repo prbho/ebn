@@ -103,7 +103,7 @@ const VehicleImportPage = () => {
     },
     {
       name: "SUVs",
-      image: "/images/suv.jpg",
+      image: "/images/jeep.jpg",
       price: "From $5,000",
       popular: true,
     },
